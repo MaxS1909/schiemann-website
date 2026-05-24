@@ -12,6 +12,7 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8 text-sm text-zinc-400">
             <a href="#leistungen" className="hover:text-zinc-100 transition-colors">Leistungen</a>
             <a href="#prozess" className="hover:text-zinc-100 transition-colors">Prozess</a>
+            <a href="/ueber-mich" className="hover:text-zinc-100 transition-colors">Über mich</a>
             <a href="#kontakt" className="hover:text-zinc-100 transition-colors">Kontakt</a>
           </div>
           <a
