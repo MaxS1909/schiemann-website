@@ -162,7 +162,7 @@ export default function Leistungen() {
                 Ein erstes Gespräch ist kostenlos und unverbindlich.
               </p>
               <a
-                href="mailto:kontakt@schiemann-funktion.de"
+                href="/kontakt"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 font-medium transition-colors duration-200"
               >
                 Projekt anfragen

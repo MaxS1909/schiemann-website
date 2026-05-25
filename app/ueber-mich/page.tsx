@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Nav } from '../components/Nav'
 import { Footer } from '../components/Footer'
 import { Reveal } from '../components/Reveal'
@@ -48,12 +49,15 @@ export default function UeberMich() {
           {/* Portrait + Bio */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-14 items-start mb-24">
             <Reveal>
-              <div className="flex flex-col items-center gap-4">
-                <div className="w-full aspect-[3/4] max-w-sm rounded-2xl border border-zinc-800 bg-zinc-900/50 flex flex-col items-center justify-center gap-4 text-zinc-700">
-                  <IconCamera />
-                  <span className="text-xs font-mono">portrait.jpg</span>
-                </div>
-                <p className="text-xs text-zinc-700 font-mono">— Platzhalter für Portrait</p>
+              <div className="relative w-full max-w-sm aspect-[3/4] rounded-2xl overflow-hidden border border-zinc-800">
+                <Image
+                  src="/portrait.png"
+                  alt="Max Schiemann"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 384px"
+                  priority
+                />
               </div>
             </Reveal>
 
@@ -122,7 +126,7 @@ export default function UeberMich() {
                 gemeinsam herausfinden, was ich für Ihr Projekt tun kann.
               </p>
               <a
-                href="mailto:kontakt@schiemann-funktion.de"
+                href="/kontakt"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 font-medium transition-colors duration-200"
               >
                 Kontakt aufnehmen
@@ -146,13 +150,3 @@ function ArrowRight() {
   )
 }
 
-function IconCamera() {
-  return (
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-      <rect x="3" y="10" width="30" height="21" rx="4" stroke="currentColor" strokeWidth="1.5" />
-      <circle cx="18" cy="20.5" r="5.5" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M13 10l2.3-3.8h5.4L23 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <circle cx="28" cy="15" r="1.5" fill="currentColor" />
-    </svg>
-  )
-}

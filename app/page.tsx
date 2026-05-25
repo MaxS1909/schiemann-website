@@ -125,7 +125,7 @@ export default function Home() {
 
             <div className="hero-enter hero-enter-4 flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/#kontakt"
+                href="/kontakt"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 font-medium transition-colors duration-200"
               >
                 Projekt anfragen
@@ -263,7 +263,7 @@ export default function Home() {
               unverbindliches Gespräch.
             </p>
             <a
-              href="mailto:kontakt@schiemann-funktion.de"
+              href="/kontakt"
               className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-blue-600 hover:bg-blue-500 font-medium text-lg transition-colors duration-200"
             >
               Jetzt anfragen

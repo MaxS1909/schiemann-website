@@ -15,7 +15,7 @@ const steps = [
     num: '01',
     title: 'Analyse',
     intro:
-      'Jedes Projekt beginnt mit Zuhören. Wir stellen die richtigen Fragen, erfassen Ihre Ausgangssituation vollständig und verstehen, was Ihre Zielgruppe wirklich braucht.',
+      'Jedes Projekt beginnt mit Zuhören. Wir stellen die richtigen Fragen, erfassen Ihre Ausgangssituation vollständig und verstehen, was Sie und Ihre Zielgruppe wirklich braucht.',
     detail:
       'Bevor wir eine Zeile Code schreiben oder ein Pixel setzen, wollen wir verstehen. Wer sind Ihre Nutzer? Was sind Ihre Ziele? Welche Probleme soll die Lösung lösen? Erst wenn wir diese Fragen klar beantworten können, beginnen wir.',
     deliverables: [
@@ -168,7 +168,7 @@ export default function Prozess() {
                 direkt auf Ihr Projekt zugeschnitten.
               </p>
               <a
-                href="mailto:kontakt@schiemann-funktion.de"
+                href="/kontakt"
                 className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 font-medium transition-colors duration-200"
               >
                 Projekt anfragen

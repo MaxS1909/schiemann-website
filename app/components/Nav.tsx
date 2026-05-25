@@ -1,11 +1,11 @@
-export type ActivePage = 'leistungen' | 'prozess' | 'ueber-mich' | 'impressum'
+export type ActivePage = 'leistungen' | 'prozess' | 'ueber-mich' | 'kontakt' | 'impressum'
 
 export function Nav({ active }: { active?: ActivePage }) {
   const navLinks: { href: string; label: string; key: ActivePage }[] = [
     { href: '/leistungen', label: 'Leistungen', key: 'leistungen' },
     { href: '/prozess',    label: 'Prozess',    key: 'prozess' },
     { href: '/ueber-mich', label: 'Über mich',  key: 'ueber-mich' },
-    { href: '/#kontakt',   label: 'Kontakt',    key: 'impressum' /* fallback, never active */ },
+    { href: '/kontakt',    label: 'Kontakt',    key: 'kontakt' },
   ]
 
   return (
@@ -35,7 +35,7 @@ export function Nav({ active }: { active?: ActivePage }) {
         </div>
 
         <a
-          href="/#kontakt"
+          href="/kontakt"
           className="text-sm font-medium px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-500 transition-colors duration-200"
         >
           Projekt anfragen
