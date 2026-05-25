@@ -1,64 +1,139 @@
+import type { Metadata } from 'next'
+import { HeroF } from './components/HeroF'
+import { Reveal } from './components/Reveal'
+import { Nav } from './components/Nav'
+import { Footer } from './components/Footer'
+
+export const metadata: Metadata = {
+  title: 'Schiemann Funktion – Webdesign & Digitale Lösungen',
+  description:
+    'Moderne Websites und digitale Lösungen – präzise entwickelt, klar gestaltet und auf Wirkung ausgerichtet.',
+}
+
+const services = [
+  {
+    id: 'webdesign',
+    icon: <IconLayout />,
+    title: 'Webdesign',
+    desc: 'Visuell präzise und nutzerzentriert – Designs, die zur Marke passen und bei Ihrer Zielgruppe ankommen.',
+    tag: 'Design',
+  },
+  {
+    id: 'entwicklung',
+    icon: <IconCode />,
+    title: 'Website-Entwicklung',
+    desc: 'Technisch saubere, performante und skalierbare Websites auf modernem Stack.',
+    tag: 'Development',
+  },
+  {
+    id: 'digital',
+    icon: <IconNodes />,
+    title: 'Digitale Lösungen',
+    desc: 'Maßgeschneiderte digitale Werkzeuge und Prozesse für Ihren modernen Arbeitsalltag.',
+    tag: 'Digital',
+  },
+  {
+    id: 'beratung',
+    icon: <IconBulb />,
+    title: 'Technische Beratung',
+    desc: 'Klare Orientierung in Technologie-Entscheidungen, Systemwahl und digitaler Strategie.',
+    tag: 'Beratung',
+  },
+]
+
+const principles = [
+  {
+    title: 'Klarheit',
+    desc: 'Strukturierte Inhalte und klare Nutzerführung – damit Besucher sofort verstehen, was zählt.',
+  },
+  {
+    title: 'Gestaltung',
+    desc: 'Modernes Design, das zur Marke passt, Vertrauen aufbaut und in Erinnerung bleibt.',
+  },
+  {
+    title: 'Technik',
+    desc: 'Sauberer Code, schnelle Ladezeiten und solide Infrastruktur als Grundlage jeder Lösung.',
+  },
+  {
+    title: 'Wirkung',
+    desc: 'Alles dient einem Ziel: Ihnen die richtige Wirkung bei den richtigen Menschen zu verschaffen.',
+  },
+]
+
+const steps = [
+  {
+    id: 'analyse',
+    num: '01',
+    title: 'Analyse',
+    desc: 'Wir verstehen Ihre Ziele, Zielgruppe und den Kontext, in dem Sie sich am Markt bewegen.',
+  },
+  {
+    id: 'konzept',
+    num: '02',
+    title: 'Konzept',
+    desc: 'Daraus entwickeln wir eine klare Strategie, Struktur und ein überzeugendes Designkonzept.',
+  },
+  {
+    id: 'umsetzung',
+    num: '03',
+    title: 'Umsetzung',
+    desc: 'Wir gestalten und entwickeln – iterativ, sorgfältig und mit Fokus auf jedes Detail.',
+  },
+  {
+    id: 'optimierung',
+    num: '04',
+    title: 'Optimierung',
+    desc: 'Nach dem Launch messen, testen und verfeinern wir kontinuierlich.',
+  },
+]
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
-      {/* Navigation */}
-      <nav className="fixed top-0 inset-x-0 z-50 border-b border-zinc-800/60 bg-zinc-950/80 backdrop-blur-md">
-        <div className="mx-auto max-w-6xl px-6 flex items-center justify-between h-16">
-          <a href="#" className="flex items-center gap-1 font-mono text-sm font-semibold tracking-tight">
-            <span className="text-indigo-400 text-base">f</span>
-            <span className="text-zinc-500">(x)</span>
-            <span className="ml-2 text-zinc-100">Schiemann Funktion</span>
-          </a>
-          <div className="hidden md:flex items-center gap-8 text-sm text-zinc-400">
-            <a href="#leistungen" className="hover:text-zinc-100 transition-colors">Leistungen</a>
-            <a href="#prozess" className="hover:text-zinc-100 transition-colors">Prozess</a>
-            <a href="/ueber-mich" className="hover:text-zinc-100 transition-colors">Über mich</a>
-            <a href="#kontakt" className="hover:text-zinc-100 transition-colors">Kontakt</a>
-          </div>
-          <a
-            href="#kontakt"
-            className="text-sm font-medium px-5 py-2 rounded-full bg-indigo-600 hover:bg-indigo-500 transition-colors"
-          >
-            Gespräch buchen
-          </a>
-        </div>
-      </nav>
+      <Nav />
 
       <main>
-        {/* Hero */}
-        <section className="pt-40 pb-28 px-6">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="inline-flex items-center gap-2 mb-10 px-4 py-2 rounded-full border border-zinc-800 bg-zinc-900 font-mono text-sm">
-              <span className="text-indigo-400">f</span>
-              <span className="text-zinc-500">(</span>
-              <span className="text-zinc-300">Ihr Unternehmen</span>
-              <span className="text-zinc-500">)</span>
-              <span className="text-zinc-600 mx-1">=</span>
-              <span className="text-zinc-100">besserer Unternehmenszustand</span>
+        {/* ── Hero ─────────────────────────────────────────────── */}
+        <section className="relative overflow-hidden" style={{ minHeight: '100svh' }}>
+          <div className="absolute inset-0 hero-dots" aria-hidden="true" />
+          <div className="absolute inset-0 hero-glow" aria-hidden="true" />
+          <HeroF />
+          <div
+            className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-zinc-950 to-transparent pointer-events-none"
+            aria-hidden="true"
+          />
+
+          <div
+            className="relative z-10 mx-auto max-w-5xl px-6 flex flex-col items-center justify-center text-center"
+            style={{ minHeight: '100svh', paddingTop: '6rem', paddingBottom: '5rem' }}
+          >
+            <div className="hero-enter hero-enter-1 inline-flex items-center gap-2.5 mb-10 px-4 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/70 text-xs text-zinc-400 tracking-widest uppercase font-medium">
+              <span className="pulse-dot inline-block w-1.5 h-1.5 rounded-full bg-blue-400" />
+              Webdesign &amp; Digitale Lösungen
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold leading-[1.08] tracking-tighter text-zinc-50 mb-7">
-              Transformation
+            <h1 className="hero-enter hero-enter-2 text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-[1.05] tracking-tighter text-zinc-50 mb-7">
+              Digitale Auftritte,
               <br />
-              <span className="text-indigo-400">mit System.</span>
+              <span className="text-blue-400">die überzeugen.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12 leading-relaxed">
-              Wir analysieren, optimieren und entwickeln Ihr Unternehmen –
-              messbar, nachhaltig und präzise auf Ihre Ziele ausgerichtet.
+            <p className="hero-enter hero-enter-3 text-base md:text-lg text-zinc-400 max-w-xl mx-auto mb-12 leading-relaxed">
+              Moderne Websites und digitale Lösungen – präzise entwickelt,
+              klar gestaltet und auf Wirkung ausgerichtet.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="hero-enter hero-enter-4 flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="#kontakt"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-indigo-600 hover:bg-indigo-500 font-medium transition-colors"
+                href="/#kontakt"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 font-medium transition-colors duration-200"
               >
-                Kostenloses Erstgespräch
+                Projekt anfragen
                 <ArrowRight />
               </a>
               <a
                 href="#leistungen"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-zinc-700 hover:border-zinc-500 hover:bg-zinc-900 font-medium transition-colors"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-zinc-700 hover:border-zinc-500 hover:bg-zinc-900/50 font-medium transition-colors duration-200"
               >
                 Leistungen entdecken
               </a>
@@ -66,250 +141,186 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Metrics bar */}
-        <section className="py-14 px-6 border-y border-zinc-800/60 bg-zinc-900/20">
-          <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-0 md:divide-x md:divide-zinc-800">
-            {[
-              { value: "40+", label: "abgeschlossene Projekte" },
-              { value: "Ø 32 %", label: "Effizienzsteigerung" },
-              { value: "12 Wo.", label: "bis zu ersten Ergebnissen" },
-            ].map((metric) => (
-              <div key={metric.label} className="text-center px-8">
-                <div className="text-4xl font-bold text-indigo-400 mb-2 tabular-nums">
-                  {metric.value}
-                </div>
-                <div className="text-zinc-500 text-sm">{metric.label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Services */}
+        {/* ── Services ─────────────────────────────────────────── */}
         <section id="leistungen" className="py-28 px-6">
           <div className="mx-auto max-w-6xl">
-            <div className="mb-16">
-              <p className="font-mono text-indigo-400 text-sm mb-4">— Leistungen</p>
-              <h2 className="text-4xl font-bold text-zinc-50 mb-4">
-                Was wir für Sie berechnen
+            <Reveal className="mb-16">
+              <p className="font-mono text-blue-400 text-sm mb-4 tracking-wide">— Leistungen</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-zinc-50 mb-5 tracking-tight">
+                Was wir für Sie entwickeln
               </h2>
-              <p className="text-zinc-400 max-w-lg leading-relaxed">
-                Jede Funktion braucht die richtigen Parameter. Gemeinsam
-                definieren wir, was Ihr Unternehmen wirklich bewegt.
+              <p className="text-zinc-400 max-w-md leading-relaxed">
+                Von der ersten Idee bis zur fertigen Lösung – wir begleiten Ihren
+                digitalen Auftritt in jeder Phase.
               </p>
-            </div>
+            </Reveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {[
-                {
-                  icon: <IconProcess />,
-                  title: "Prozessoptimierung",
-                  desc: "Wir analysieren Ihre Abläufe präzise und eliminieren Ineffizienzen – systematisch, datenbasiert und nachhaltig wirksam.",
-                  tag: "Effizienz",
-                },
-                {
-                  icon: <IconOrg />,
-                  title: "Organisationsentwicklung",
-                  desc: "Strukturen, Teams und Führungsmodelle entwickeln wir so weiter, dass Wachstum stabil und skalierbar verankert wird.",
-                  tag: "Skalierung",
-                },
-                {
-                  icon: <IconStrategy />,
-                  title: "Strategische Beratung",
-                  desc: "Von der Marktanalyse bis zur konkreten Roadmap: Wir schaffen Klarheit über Ihren Weg – und gehen ihn mit Ihnen.",
-                  tag: "Wachstum",
-                },
-              ].map((service) => (
-                <div
-                  key={service.title}
-                  className="group flex flex-col p-8 rounded-2xl border border-zinc-800 bg-zinc-900/40 hover:border-indigo-500/30 hover:bg-zinc-900/70 transition-all duration-300"
-                >
-                  <div className="mb-6 text-indigo-400">{service.icon}</div>
-                  <div className="mb-2">
-                    <span className="text-xs font-mono text-indigo-500 bg-indigo-500/10 px-2 py-0.5 rounded-full">
-                      {service.tag}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {services.map((s, i) => (
+                <Reveal key={s.id} delay={i * 80} className="h-full">
+                  <a
+                    href={`/leistungen#${s.id}`}
+                    className="group h-full flex flex-col p-7 rounded-2xl border border-zinc-800 bg-zinc-900/30 hover:border-blue-500/35 hover:bg-zinc-900/60 card-hover"
+                  >
+                    <div className="mb-5 text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
+                      {s.icon}
+                    </div>
+                    <span className="text-xs font-mono text-blue-500 bg-blue-500/10 px-2 py-0.5 rounded-full self-start mb-4">
+                      {s.tag}
                     </span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-zinc-100 mt-3 mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed flex-1">
-                    {service.desc}
-                  </p>
-                </div>
+                    <h3 className="text-lg font-semibold text-zinc-100 mb-3">{s.title}</h3>
+                    <p className="text-zinc-400 text-sm leading-relaxed flex-1">{s.desc}</p>
+                    <span className="mt-5 text-xs text-blue-500/60 font-mono group-hover:text-blue-400 transition-colors duration-300">
+                      Mehr erfahren →
+                    </span>
+                  </a>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Process */}
-        <section id="prozess" className="py-28 px-6 bg-zinc-900/20 border-y border-zinc-800/40">
+        {/* ── Philosophy ───────────────────────────────────────── */}
+        <section id="ansatz" className="py-28 px-6 border-y border-zinc-800/40 bg-zinc-900/10">
           <div className="mx-auto max-w-6xl">
-            <div className="mb-16">
-              <p className="font-mono text-indigo-400 text-sm mb-4">— Unser Prozess</p>
-              <h2 className="text-4xl font-bold text-zinc-50 mb-4">
-                So lösen wir die Gleichung
-              </h2>
-              <p className="text-zinc-400 max-w-lg leading-relaxed">
-                Unser Vorgehen ist strukturiert, transparent und konsequent auf
-                messbare Ergebnisse ausgerichtet.
-              </p>
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              <Reveal>
+                <p className="font-mono text-blue-400 text-sm mb-4 tracking-wide">— Unser Ansatz</p>
+                <h2 className="text-4xl md:text-5xl font-bold text-zinc-50 mb-6 tracking-tight leading-tight">
+                  Klar denken.
+                  <br />
+                  Sauber entwickeln.
+                  <br />
+                  Wirkungsvoll gestalten.
+                </h2>
+                <p className="text-zinc-400 leading-relaxed max-w-sm">
+                  Gutes Design entsteht nicht durch Zufall. Es folgt einer klaren Haltung:
+                  Konsequenz in der Gestaltung, Sorgfalt in der Technik und Fokus auf das,
+                  was für den Nutzer wirklich zählt.
+                </p>
+              </Reveal>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {[
-                {
-                  num: "01",
-                  title: "Analyse",
-                  desc: "Wir erfassen Ihren Ist-Zustand vollständig und ohne Vorannahmen – präzise und faktenbasiert.",
-                },
-                {
-                  num: "02",
-                  title: "Konzeption",
-                  desc: "Gemeinsam entwickeln wir die optimale Strategie und definieren klare, erreichbare Zielzustände.",
-                },
-                {
-                  num: "03",
-                  title: "Umsetzung",
-                  desc: "Wir implementieren die Lösung mit Ihrem Team – pragmatisch, agil und mit echtem Wirkungsfokus.",
-                },
-                {
-                  num: "04",
-                  title: "Messung",
-                  desc: "Wir belegen Fortschritt und Ergebnisse anhand klar definierter KPIs – transparent und nachvollziehbar.",
-                },
-              ].map((step) => (
-                <div
-                  key={step.num}
-                  className="p-6 rounded-xl border border-zinc-800 bg-zinc-950"
-                >
-                  <div className="font-mono text-indigo-400 text-xs mb-5 tracking-widest">
-                    {step.num}
-                  </div>
-                  <h3 className="text-lg font-semibold text-zinc-100 mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed">
-                    {step.desc}
-                  </p>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {principles.map((p, i) => (
+                  <Reveal key={p.title} delay={i * 70} className="h-full">
+                    <div className="p-6 rounded-xl border border-zinc-800/70 bg-zinc-900/25 h-full">
+                      <h3 className="text-zinc-100 font-semibold mb-2">{p.title}</h3>
+                      <p className="text-zinc-500 text-sm leading-relaxed">{p.desc}</p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Process ──────────────────────────────────────────── */}
+        <section id="prozess" className="py-28 px-6">
+          <div className="mx-auto max-w-6xl">
+            <Reveal className="mb-16">
+              <p className="font-mono text-blue-400 text-sm mb-4 tracking-wide">— Prozess</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-zinc-50 mb-5 tracking-tight">
+                Wie wir arbeiten
+              </h2>
+              <p className="text-zinc-400 max-w-md leading-relaxed">
+                Strukturiert, transparent und konsequent auf Ihr Ergebnis ausgerichtet.
+              </p>
+            </Reveal>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {steps.map((step, i) => (
+                <Reveal key={step.id} delay={i * 80} className="h-full">
+                  <a
+                    href={`/prozess#${step.id}`}
+                    className="group h-full flex flex-col p-7 rounded-2xl border border-zinc-800 bg-zinc-950 hover:border-blue-500/35 hover:bg-zinc-900/40 card-hover"
+                  >
+                    <div className="font-mono text-blue-400 text-xs mb-6 tracking-widest group-hover:text-blue-300 transition-colors duration-300">
+                      {step.num}
+                    </div>
+                    <h3 className="text-lg font-semibold text-zinc-100 mb-3">{step.title}</h3>
+                    <p className="text-zinc-400 text-sm leading-relaxed flex-1">{step.desc}</p>
+                    <span className="mt-5 text-xs text-blue-500/60 font-mono group-hover:text-blue-400 transition-colors duration-300">
+                      Details →
+                    </span>
+                  </a>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
+        {/* ── Contact ──────────────────────────────────────────── */}
         <section id="kontakt" className="py-36 px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="inline-block mb-10 px-6 py-3 rounded-2xl border border-zinc-800 bg-zinc-900 font-mono text-sm text-zinc-400">
-              <span className="text-indigo-400">f</span>
-              <span className="text-zinc-600">(</span>
-              <span className="text-zinc-100">Ihr Unternehmen</span>
-              <span className="text-zinc-600">)</span>
-              <span className="text-zinc-600 mx-2">=</span>
-              <span className="text-zinc-500 italic">noch unbekannt</span>
-            </div>
-
-            <h2 className="text-4xl md:text-5xl font-bold text-zinc-50 mb-6 leading-tight">
-              Finden Sie heraus,
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <p className="font-mono text-blue-400 text-sm mb-6 tracking-wide">— Kontakt</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-zinc-50 mb-6 tracking-tight leading-tight">
+              Bereit für
               <br />
-              <span className="text-indigo-400">was möglich ist.</span>
+              Ihr Projekt?
             </h2>
-
-            <p className="text-zinc-400 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
-              In einem unverbindlichen Erstgespräch analysieren wir Ihr Potenzial
-              und zeigen, wie wir Sie auf den nächsten Level bringen.
+            <p className="text-zinc-400 text-lg mb-12 leading-relaxed">
+              Teilen Sie uns Ihre Idee mit. Wir melden uns für ein erstes,
+              unverbindliches Gespräch.
             </p>
-
             <a
-              href="mailto:info@schiemann-funktion.de"
-              className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-indigo-600 hover:bg-indigo-500 font-medium text-lg transition-colors"
+              href="mailto:kontakt@schiemann-funktion.de"
+              className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-blue-600 hover:bg-blue-500 font-medium text-lg transition-colors duration-200"
             >
-              Gespräch vereinbaren
+              Jetzt anfragen
               <ArrowRight />
             </a>
-
-            <p className="mt-6 text-zinc-600 text-sm">
-              Kostenlos · Unverbindlich · 30 Minuten
-            </p>
-          </div>
+            <p className="mt-6 text-zinc-600 text-sm">kontakt@schiemann-funktion.de</p>
+          </Reveal>
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="py-10 px-6 border-t border-zinc-800/60">
-        <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
-          <span className="font-mono">
-            <span className="text-indigo-400">f</span>
-            <span className="text-zinc-700">(x)</span>
-            <span className="ml-2">Schiemann Funktion</span>
-          </span>
-          <span>
-            © {new Date().getFullYear()} Schiemann Funktion. Alle Rechte vorbehalten.
-          </span>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-zinc-300 transition-colors">
-              Impressum
-            </a>
-            <a href="#" className="hover:text-zinc-300 transition-colors">
-              Datenschutz
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
-  );
+  )
 }
 
 function ArrowRight() {
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-      <path
-        d="M3 8h10M9 4l4 4-4 4"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
-  );
+  )
 }
 
-function IconProcess() {
+function IconLayout() {
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <path
-        d="M4 10h6M4 18h6M18 10h6M18 18h6M10 10h8v8h-8z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="2" y="3" width="20" height="18" rx="2" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M2 8h20M7 3v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M7 13h4M7 17h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
-  );
+  )
 }
 
-function IconOrg() {
+function IconCode() {
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <circle cx="14" cy="6" r="2.5" stroke="currentColor" strokeWidth="1.5" />
-      <circle cx="6" cy="21" r="2.5" stroke="currentColor" strokeWidth="1.5" />
-      <circle cx="22" cy="21" r="2.5" stroke="currentColor" strokeWidth="1.5" />
-      <path
-        d="M14 8.5v5M14 13.5l-5.5 5M14 13.5l5.5 5"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-      />
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
-  );
+  )
 }
 
-function IconStrategy() {
+function IconNodes() {
   return (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-      <circle cx="14" cy="14" r="10" stroke="currentColor" strokeWidth="1.5" />
-      <circle cx="14" cy="14" r="5" stroke="currentColor" strokeWidth="1.5" />
-      <circle cx="14" cy="14" r="1.5" fill="currentColor" />
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="4" r="2" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="4" cy="20" r="2" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="20" cy="20" r="2" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M12 6v6M12 12L5.4 18M12 12l6.6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
-  );
+  )
+}
+
+function IconBulb() {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 2a7 7 0 0 1 7 7c0 2.6-1.4 4.9-3.5 6.2L15 17H9l-.5-1.8A7 7 0 0 1 5 9a7 7 0 0 1 7-7z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M9 21h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  )
 }

@@ -21,3 +21,87 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* ── Hero background ────────────────────────────────────── */
+.hero-dots {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.hero-glow {
+  background: radial-gradient(ellipse 75% 55% at 50% -5%, rgba(59, 130, 246, 0.1) 0%, transparent 65%);
+}
+
+/* ── 3D rotating f (around vertical / Y axis) ───────────── */
+@keyframes f-spin-y {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .f-rotate-3d {
+    display: inline-block;
+    animation: f-spin-y 22s linear infinite;
+  }
+}
+
+/* ── Hero content entrance ──────────────────────────────── */
+@keyframes hero-enter {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-enter {
+    opacity: 0;
+    animation: hero-enter 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .hero-enter-1 { animation-delay: 0.05s; }
+  .hero-enter-2 { animation-delay: 0.22s; }
+  .hero-enter-3 { animation-delay: 0.38s; }
+  .hero-enter-4 { animation-delay: 0.54s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter { opacity: 1; }
+}
+
+/* ── Scroll-reveal ──────────────────────────────────────── */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Card hover (zoom + glow) ───────────────────────────── */
+.card-hover {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background-color 0.35s ease;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card-hover:hover {
+    transform: scale(1.028) translateY(-5px);
+    box-shadow: 0 16px 48px rgba(59, 130, 246, 0.14);
+  }
+}
+
+/* Pulsing dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
