@@ -91,7 +91,7 @@ export default function Leistungen() {
           {/* Page header */}
           <Reveal className="mb-24">
             <p className="font-mono text-blue-400 text-sm mb-4 tracking-wide">— Leistungen</p>
-            <h1 className="text-5xl md:text-6xl font-bold leading-[1.05] tracking-tighter text-zinc-50 mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tighter text-zinc-50 mb-6">
               Was wir für Sie
               <br />
               <span className="text-blue-400">entwickeln.</span>

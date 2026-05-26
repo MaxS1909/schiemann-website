@@ -3,6 +3,7 @@ import { HeroF } from './components/HeroF'
 import { Reveal } from './components/Reveal'
 import { Nav } from './components/Nav'
 import { Footer } from './components/Footer'
+import { MatrixBackground } from './components/MatrixBackground'
 
 export const metadata: Metadata = {
   title: 'Schiemann Funktion – Webdesign & Digitale Lösungen',
@@ -97,6 +98,7 @@ export default function Home() {
         <section className="relative overflow-hidden" style={{ minHeight: '100svh' }}>
           <div className="absolute inset-0 hero-dots" aria-hidden="true" />
           <div className="absolute inset-0 hero-glow" aria-hidden="true" />
+          <MatrixBackground />
           <HeroF />
           <div
             className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-zinc-950 to-transparent pointer-events-none"
@@ -112,7 +114,7 @@ export default function Home() {
               Webdesign &amp; Digitale Lösungen
             </div>
 
-            <h1 className="hero-enter hero-enter-2 text-5xl sm:text-6xl md:text-[5.5rem] font-bold leading-[1.05] tracking-tighter text-zinc-50 mb-7">
+            <h1 className="hero-enter hero-enter-2 text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tighter text-zinc-50 mb-7">
               Digitale Auftritte,
               <br />
               <span className="text-blue-400">die überzeugen.</span>

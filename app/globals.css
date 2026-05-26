@@ -32,18 +32,6 @@ html {
   background: radial-gradient(ellipse 75% 55% at 50% -5%, rgba(59, 130, 246, 0.1) 0%, transparent 65%);
 }
 
-/* ── 3D rotating f (around vertical / Y axis) ───────────── */
-@keyframes f-spin-y {
-  from { transform: rotateY(0deg); }
-  to   { transform: rotateY(360deg); }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .f-rotate-3d {
-    display: inline-block;
-    animation: f-spin-y 22s linear infinite;
-  }
-}
 
 /* ── Hero content entrance ──────────────────────────────── */
 @keyframes hero-enter {

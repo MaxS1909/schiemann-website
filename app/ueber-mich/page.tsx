@@ -39,7 +39,7 @@ export default function UeberMich() {
           {/* Header */}
           <Reveal className="mb-20">
             <p className="font-mono text-blue-400 text-sm mb-4 tracking-wide">— Über mich</p>
-            <h1 className="text-5xl md:text-6xl font-bold leading-[1.05] tracking-tighter text-zinc-50">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tighter text-zinc-50">
               Der Mensch hinter
               <br />
               <span className="text-blue-400">der Arbeit.</span>

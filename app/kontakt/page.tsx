@@ -45,7 +45,7 @@ export default function Kontakt() {
           {/* Page header */}
           <Reveal className="mb-20">
             <p className="font-mono text-blue-400 text-sm mb-4 tracking-wide">— Kontakt</p>
-            <h1 className="text-5xl md:text-6xl font-bold leading-[1.05] tracking-tighter text-zinc-50 mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] tracking-tighter text-zinc-50 mb-6">
               Starten wir Ihr
               <br />
               <span className="text-blue-400">Projekt.</span>
