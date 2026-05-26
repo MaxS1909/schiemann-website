@@ -19,8 +19,9 @@ export function HeroF() {
     if (!canvas) return
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
+    const rawCtx = canvas.getContext('2d')
+    if (!rawCtx) return
+    const ctx = rawCtx  // non-null, TypeScript knows this in all nested functions
 
     type Col = { y: number; speed: number; chars: string[]; shimmer: Float32Array }
     let cols: Col[] = []
@@ -54,8 +55,8 @@ export function HeroF() {
       const fs = Math.min(Math.max(260, canvas!.width * 0.52), 680)
       fontStr = `italic ${fs}px Georgia, serif`
 
-      ctx!.font = fontStr
-      const m = ctx!.measureText('f')
+      ctx.font = fontStr
+      const m = ctx.measureText('f')
       cy = canvas!.height / 2 + (m.actualBoundingBoxAscent - m.actualBoundingBoxDescent) / 2
 
       cols = Array.from({ length: Math.floor(canvas!.width / RAIN_FS) }, makeCol)

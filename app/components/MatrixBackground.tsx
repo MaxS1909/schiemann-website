@@ -20,8 +20,9 @@ export function MatrixBackground() {
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
+    const rawCtx = canvas.getContext('2d')
+    if (!rawCtx) return
+    const ctx = rawCtx
 
     type Col = {
       y: number
